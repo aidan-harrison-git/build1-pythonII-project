@@ -10,15 +10,13 @@ class Game():
         self.guesses_count = 0
         self.beg_ntg = beg_ntg
         self.beg_stg = beg_stg
-        # self.string = self.generate_name(self)
         self.curr_guess = self.guess()
-        self.updated_str, self.updated_name = self.replace()
         self.curr_str = ''
         
         
     def guess(self):
         if self.guesses_count == 0:
-            print(self.beg_stg)
+            print(f'\n{self.beg_stg} is your string to guess\n')
         else:
             pass
 
@@ -28,7 +26,8 @@ class Game():
                 letter = input('Guess a new letter: ')
         else:
             self.guessed_letters.append(letter)
-            self.guesses_count += 1
+            if self.guesses_count == 0:
+                self.guesses_count += 1
 
         return letter
 
@@ -39,9 +38,6 @@ class Game():
         else:
             list_ntg = list(self.updated_name)
             list_stg = list(self.updated_str)
-        
-        print(list_ntg) # remove later
-        print(list_stg) # remove later
 
         if self.guesses_count > 1:
             curr_guess = self.guess()
@@ -67,12 +63,16 @@ class Game():
         self.updated_str = updated_str
         self.updated_name = updated_name
 
-        print(f'{self.curr_guess} is your guess and {updated_str} is your updated string')
+        if updated_str.lower() == self.beg_ntg.lower():
+            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
+            print('You won the game! Thanks for playing!\n')
+        elif self.guesses_count == 12:
+            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
+            print('You failed to guess the name. Thanks for playing!\n')
+        else:
+            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
 
-        # while self.guesses_count < 13:
-        #     self.replace()
-
-        return updated_str, updated_name
+        return 
 
     def response(self):
         curr_guess = self.curr_guess
@@ -86,9 +86,7 @@ class Game():
             else:
                 self.replace()
                 self.guesses_count += 1
-            continue
-        
-        return 'Thanks for playing!'
+        return 
 
 
 
