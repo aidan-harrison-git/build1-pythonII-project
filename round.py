@@ -1,6 +1,5 @@
 import names
 import player
-import random
 import game
 
 class Round():

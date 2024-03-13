@@ -1,6 +1,3 @@
-import player
-import game
-import names
 import round
 
 get_name = input('What is your name? ')

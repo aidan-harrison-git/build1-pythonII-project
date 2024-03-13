@@ -1,9 +1,3 @@
-import names
-import components
-import player
-import random
-
-
 class Game():
     def __init__(self, beg_ntg, beg_stg):
         self.guessed_letters = []
@@ -20,7 +14,7 @@ class Game():
         else:
             pass
 
-        letter = input('Guess a letter: ')
+        letter = input('Guess a lowercase letter: ')
 
         if letter in self.guessed_letters:
                 letter = input('Guess a new letter: ')
@@ -64,13 +58,13 @@ class Game():
         self.updated_name = updated_name
 
         if updated_str.lower() == self.beg_ntg.lower():
-            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
+            print(f'{updated_str} is your updated string\n')
             print('You won the game! Thanks for playing!\n')
         elif self.guesses_count == 12:
-            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
+            print(f'{updated_str} is your updated string\n')
             print('You failed to guess the name. Thanks for playing!\n')
         else:
-            print(f'{self.curr_guess} is your guess and {updated_str} is your updated string\n')
+            print(f'{updated_str} is your updated string\n')
 
         return 
 

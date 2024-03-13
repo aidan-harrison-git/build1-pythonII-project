@@ -1,14 +1,10 @@
 import random
 
-import components
-import player
-import game
-
 class Names():
     directory = {'art_sci':['Dewise', 'Collins'], 
                 'bus':['Vega', 'Greenlee'], 
                 'bib':['Soko', 'Gardner'], 
-                'edu':['Bean', 'Smith']
+                'edu':['Bean', 'Lancillotti']
     }
     def __init__(self, player):    
         self.string_to_guess_list = []
