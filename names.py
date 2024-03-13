@@ -20,7 +20,7 @@ class Names():
 
     def generate_name(self, player):
         name_index = random.randint(0, len(self.directory[player.department])-1)
-        curr_ntg = self.directory[player.department][name_index]
+        curr_ntg = self.directory[player.department][name_index].lower()
         
         # for character in self.name_selected:
         #     self.string_to_guess_list.append('X')
@@ -33,9 +33,9 @@ class Names():
     def generate_string(self):
         
         for num in range(len(self.curr_ntg)):
-            self.string_to_guess_list.append('X')
+            self.string_to_guess_list.append('#')
 
-        curr_stg = '-'.join(self.string_to_guess_list)
+        curr_stg = ''.join(self.string_to_guess_list)
 
         return curr_stg
 

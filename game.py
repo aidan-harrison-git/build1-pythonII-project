@@ -12,11 +12,13 @@ class Game():
         self.beg_stg = beg_stg
         # self.string = self.generate_name(self)
         self.curr_guess = self.guess()
-        self.updated_str = self.replace()
+        self.updated_str, self.updated_name = self.replace()
         
         
 
     def guess(self):
+        print(self.beg_stg)
+
         letter = input('Guess a letter: ')
 
         if letter in self.guessed_letters:
@@ -28,24 +30,47 @@ class Game():
         return letter
 
     def replace(self):
-
-        print(self.beg_stg)
-
-        list_ntg = list(self.beg_ntg)
-        list_stg = list(self.beg_stg)
+        if self.guesses_count == 1:
+            list_ntg = list(self.beg_ntg)
+            list_stg = list(self.beg_stg)
+        else:
+            list_ntg = list(self.updated_name)
+            list_stg = list(self.updated_str)
         
         print(list_ntg)
         print(list_stg)
 
         for name_letter in list_ntg:
-            if name_letter == self.curr_guess:
+            if  self.curr_guess == name_letter:
                 x_index = list_ntg.index(name_letter)
-                list_stg[x_index] = name_letter
+                list_stg[x_index] = name_letter.upper()
+                if list_ntg.count(name_letter) > 1:
+                    list_ntg[x_index] = '#'
         
-        updated_str = '-'.join(list_stg)
+        updated_str = ''.join(list_stg)
+        updated_name = ''.join(list_ntg)
+        
+        self.updated_str = updated_str
+        self.updated_name = updated_name
 
-        return updated_str
+        print(self.response())
 
+        # while self.guesses_count < 13:
+        #     self.replace()
+
+        return updated_str, updated_name
+
+    def response(self):
+        curr_guess = self.curr_guess
+        updated_str = self.updated_str
+        return f'{curr_guess} is your guess and {updated_str} is your updated string to guess.'
+
+    def cycle(self):
+        while self.guesses_count < 13 and self.updated_str != self.beg_ntg.lower():
+            self.guess()
+            self.replace()
+        
+        return 'Thanks for playing!'
 
 
 
