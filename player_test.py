@@ -1,10 +1,10 @@
 import round
 
-get_name = input('What is your name? ')
+play_again = 'yes'
 
-round1 = round.Round(get_name)
-round1.game.cycle()
-
-
-
+while play_again != 'no':
+    get_name = input('\nDesignate a username: ')
+    round1 = round.Round(get_name)
+    round1.game.cycle() 
+    play_again = input('Would you like to play again? yes/no: ').lower()
 
