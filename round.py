@@ -41,20 +41,20 @@ import game
 
 class Round():
     def __init__(self, player_name):
-        super().__init__()
+        # super().__init__()
         self.curr_round_num = 0
         self.player_name = player_name
         self.player = player.Player(player_name)
         self.name = names.Names(self.player)
         self.game = game.Game(self.name.curr_ntg, self.name.curr_stg)
-        self.resp = self.response()
+        # self.resp = self.response()
         self.runtime = self.game.cycle()
 
-    def response(self):
-        curr_guess = self.game.curr_guess
-        updated_str = self.game.updated_str
-        return f'{curr_guess} is your guess and {updated_str} is your updated string to guess.'
+    # def response(self):
+    #     curr_guess = self.game.curr_guess
+    #     updated_str = self.game.updated_str
+    #     return f'{curr_guess} is your guess and {updated_str} is your updated string to guess.'
 
-    def play_game(self):
-        for num in range(0, 13):
-            self.response()
+    # def play_game(self):
+    #     for num in range(0, 13):
+    #         self.response()

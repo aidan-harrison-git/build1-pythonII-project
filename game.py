@@ -13,11 +13,14 @@ class Game():
         # self.string = self.generate_name(self)
         self.curr_guess = self.guess()
         self.updated_str, self.updated_name = self.replace()
+        self.curr_str = ''
         
         
-
     def guess(self):
-        print(self.beg_stg)
+        if self.guesses_count == 0:
+            print(self.beg_stg)
+        else:
+            pass
 
         letter = input('Guess a letter: ')
 
@@ -37,23 +40,34 @@ class Game():
             list_ntg = list(self.updated_name)
             list_stg = list(self.updated_str)
         
-        print(list_ntg)
-        print(list_stg)
+        print(list_ntg) # remove later
+        print(list_stg) # remove later
 
-        for name_letter in list_ntg:
-            if  self.curr_guess == name_letter:
-                x_index = list_ntg.index(name_letter)
-                list_stg[x_index] = name_letter.upper()
-                if list_ntg.count(name_letter) > 1:
-                    list_ntg[x_index] = '#'
+        if self.guesses_count > 1:
+            curr_guess = self.guess()
+            for name_letter in list_ntg:
+                if  curr_guess == name_letter:
+                    x_index = list_ntg.index(name_letter)
+                    list_stg[x_index] = name_letter.upper()
+                    if list_ntg.count(name_letter) > 1:
+                        list_ntg[x_index] = '#'
+        else:
+            for name_letter in list_ntg:
+                if self.curr_guess == name_letter:
+                    x_index = list_ntg.index(name_letter)
+                    list_stg[x_index] = name_letter.upper()
+                    if list_ntg.count(name_letter) > 1:
+                        list_ntg[x_index] = '#'
         
         updated_str = ''.join(list_stg)
         updated_name = ''.join(list_ntg)
         
+        self.curr_str = updated_str
+
         self.updated_str = updated_str
         self.updated_name = updated_name
 
-        print(self.response())
+        print(f'{self.curr_guess} is your guess and {updated_str} is your updated string')
 
         # while self.guesses_count < 13:
         #     self.replace()
@@ -66,9 +80,13 @@ class Game():
         return f'{curr_guess} is your guess and {updated_str} is your updated string to guess.'
 
     def cycle(self):
-        while self.guesses_count < 13 and self.updated_str != self.beg_ntg.lower():
-            self.guess()
-            self.replace()
+        while self.guesses_count < 13 and self.curr_str.lower() != self.beg_ntg.lower():
+            if self.guesses_count == 0:
+                pass
+            else:
+                self.replace()
+                self.guesses_count += 1
+            continue
         
         return 'Thanks for playing!'
 
