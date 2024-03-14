@@ -1,10 +1,10 @@
 import random
 
 class Names():
-    directory = {'art_sci':['Dewise', 'Collins'], 
-                'bus':['Vega', 'Greenlee'], 
-                'bib':['Soko', 'Gardner'], 
-                'edu':['Bean', 'Lancillotti']
+    directory = {'art_sci':['Deweese', 'Collins', 'Johnson', 'Davis', 'Barton', 'Kersey', 'Fader', 'Gean', 'Pierce', 'Butterfield', 'Chaffin', 'Barr', 'Spencer', 'Lankford', 'Massey', 'Williams', 'McDonald', 'Mennino', 'Spradlin', 'Rhodes', 'Cunningham'], 
+                'bus':['Vega', 'Greenlee', 'Hibbett', 'Roberson', 'Deffenbaugh', 'Smith', 'Lanciloti', 'Deberry', 'Sewell', 'Johnson', 'Satterfield', 'Prentice', 'Black', 'Gray', 'Mennino'], 
+                'bib':['Sokoloski', 'Gardner', 'Rogers', 'Edwards', 'Powell', 'Cook', 'Parker', 'DeBord', 'Blackwelder', 'Ketchum', 'Coleman', 'Moore', 'South'], 
+                'edu':['Bean', 'Cypress', 'Weaver', 'Watson', 'Mabe', 'Baldwin', 'Fraser', 'Johnson', 'Creecy', 'Helton', 'Taylor', 'Cravens', 'McNeal', 'Malecha']
     }
     def __init__(self, player):    
         self.string_to_guess_list = []
