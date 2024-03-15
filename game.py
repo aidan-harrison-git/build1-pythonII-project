@@ -1,9 +1,12 @@
+import round
+
 class Game():
-    def __init__(self, beg_ntg, beg_stg):
+    def __init__(self, beg_ntg, beg_stg, player_name):
         self.guessed_letters = []
         self.guesses_count = 0
         self.beg_ntg = beg_ntg
         self.beg_stg = beg_stg
+        self.player_name = player_name
         self.curr_guess = self.guess()
         self.curr_str = ''
         
@@ -59,10 +62,10 @@ class Game():
 
         if updated_str.lower() == self.beg_ntg.lower():
             print(f'{updated_str} is your updated string\n')
-            print('You won the game! Thanks for playing!\n')
+            print(f'{self.player_name}, you won the game! Thanks for playing!\n')
         elif self.guesses_count == 12:
             print(f'{updated_str} is your updated string\n')
-            print('You failed to guess the name. Thanks for playing!\n')
+            print(f'{self.player_name}, you failed to guess the name. Thanks for playing!\n')
         else:
             print(f'{updated_str} is your updated string\n')
 
