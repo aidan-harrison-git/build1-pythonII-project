@@ -2,7 +2,7 @@ import round
 
 play_again = 'yes'
 
-print('This game will challenge you to guess the name of a professor in your department.')
+print('\nThis game will challenge you to guess the name of a professor in your department.')
 print('\nYou will have 12 opportunities to guess a letter. Each guess will be applied to the hidden name.')
 print('\nTo win, reveal the name before you exhaust your guesses!')
 

@@ -68,11 +68,6 @@ class Game():
 
         return 
 
-    def response(self):
-        curr_guess = self.curr_guess
-        updated_str = self.updated_str
-        return f'{curr_guess} is your guess and {updated_str} is your updated string to guess.'
-
     def cycle(self):
         while self.guesses_count < 13 and self.curr_str.lower() != self.beg_ntg.lower():
             if self.guesses_count == 0:
