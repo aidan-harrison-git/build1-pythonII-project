@@ -19,12 +19,12 @@ class Game():
 
         letter = input('Guess a lowercase letter: ')
 
-        if letter in self.guessed_letters:
+        while letter in self.guessed_letters:
                 letter = input('Guess a new letter: ')
-        else:
-            self.guessed_letters.append(letter)
-            if self.guesses_count == 0:
-                self.guesses_count += 1
+        
+        self.guessed_letters.append(letter)
+        if self.guesses_count == 0:
+            self.guesses_count += 1
 
         return letter
 
