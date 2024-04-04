@@ -17,7 +17,24 @@ class Game():
         else:
             pass
 
-        letter = input('Guess a lowercase letter: ')
+        while True:
+            letter = str(input('Guess a lowercase letter: '))
+            if letter.isalpha() == True and len(letter) == 1:
+                break
+            else:
+                print('Invalid input. Please enter a single lowercase letter: ')
+        # letter = letter.lower()
+        # if letter[0].isspace() == False and letter[0].isnumeric() == False:
+        #     letter = letter[0]
+        # elif letter[0].isnumeric() == True or letter[1].isnumeric() == True:
+        #     while True:
+        #         letter = input('Numbers are not accepted. Enter a single lowercase letter: ')
+        # elif letter[0].isspace() == True and letter[1].isalpha() == True:
+        #     letter = letter[1]
+        # else:
+        #     while True:
+        #         letter = input('Input must be a lowercase letter. Try again: ')
+
 
         while letter in self.guessed_letters:
                 letter = input('Guess a new letter: ')
