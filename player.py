@@ -12,13 +12,13 @@ class Player():
 
     def department_select(self):
         department_selection = input(self.print_dept_options())
-        if department_selection == 'a' or department_selection == 'a)' or department_selection == 'A':
+        if department_selection in ['a', 'a ', 'a)', 'a) ', 'A', 'A ', 'A)', 'A) ']:
             return 'art_sci'
-        elif department_selection == 'b' or department_selection == 'b)' or department_selection == 'B':
+        elif department_selection in ['b', 'b ', 'b)', 'b) ', 'B', 'B ', 'B)', 'B) ']:
             return 'bib'
-        elif department_selection == 'c' or department_selection == 'c)' or department_selection == 'C':
+        elif department_selection in ['c', 'c ', 'c)', 'c) ', 'C', 'C ', 'C)', 'C) ']:
             return 'bus'
-        elif department_selection == 'd' or department_selection == 'd)' or department_selection == 'D':
+        elif department_selection in ['d', 'd ', 'd)', 'd) ', 'D', 'D ', 'D)', 'D) ']:
             return 'edu'
         else:
             print('Please try again...')
