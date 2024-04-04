@@ -68,6 +68,7 @@ class Game():
             print(f'{self.player_name}, you failed to guess the name. Thanks for playing!\n')
         else:
             print(f'{updated_str} is your updated string\n')
+            print(f'You have guessed: \n{self.guessed_letters} \nYour guesses total {len(self.guessed_letters)} of 12')
 
         return 
 
