@@ -4,7 +4,7 @@ class Player():
         self.department = self.department_select()
     
     def print_dept_options(self):
-        dept_strings = ['a) Behavioral Sciences', 'b) Education', 'c) Math, Engineering, & CompSci', 'd) Business', 'e) Nursing', 'f) Bio, Physical, & Health Sciences', 'g) Arts & Humanities', 'h) Comms & Creative Arts']
+        dept_strings = ['a) Behavioral Sciences', 'b) Education', 'c) Math, Engineering, & CompSci', 'd) Business', 'e) Nursing', 'f) Bio, Physical, & Health Sciences', 'g) Arts & Humanities', 'h) Comms & Creative Arts', 'i) Biblical Studies']
         print("\n Select the letter corresponding to your major's department: \n")
         for dept in dept_strings:
             print(f'{dept} \n')
@@ -28,8 +28,8 @@ class Player():
             return 'A&H'
         elif department_selection in ['h', 'h ', 'h)', 'h) ', 'H', 'H ', 'H)', 'H) ']:
             return 'CCA'
+        elif department_selection in ['i', 'i ', 'i)', 'i) ', 'I', 'I ', 'I)', 'I) ']:
+            return 'BIB'
         else:
             print('Please try again...')
         return self.print_dept_options()
-
-    

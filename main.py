@@ -11,4 +11,3 @@ while play_again != 'no':
     curr_round = round.Round(get_name)
     curr_round.game.cycle() 
     play_again = input('Would you like to play again? yes/no: ').lower()
-
