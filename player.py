@@ -8,7 +8,7 @@ class Player():
         print("\n Select the letter corresponding to your major's department: \n")
         for dept in dept_strings:
             print(f'{dept} \n')
-        return 'Selection: '
+        return 'Selection (please type a single letter): '
 
     def department_select(self): # this function returns a department to be held by self.department
         department_selection = input(self.print_dept_options())

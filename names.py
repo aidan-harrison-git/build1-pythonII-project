@@ -38,8 +38,10 @@ class Names():
                 directory['A&H'].append(row[0])
             elif row[2] == 'BIB':
                 directory['BIB'].append(row[0])
-            else:
+            elif row[2] == 'CCA':
                 directory['CCA'].append(row[0])
+            else:
+                pass
 
     def __init__(self, player): # requires a player object to act on for generating a name from their department 
         self.string_to_guess_list = [] # holds the number of hashes '#' matching the length of the name to guess
