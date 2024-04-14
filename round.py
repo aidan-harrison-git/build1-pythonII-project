@@ -1,7 +1,7 @@
 import names
 import player
 import game
-
+# instantiates player object, names object, game object using their required inputs
 class Round():
     def __init__(self, player_name):
         self.curr_round_num = 0
