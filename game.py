@@ -21,7 +21,7 @@ class Game():
             else:
                 print('Invalid input. Please enter a single lowercase letter: ') # guides user to make an acceptable input
 
-        while letter in self.guessed_letters:
+        while letter.lower() in self.guessed_letters:
                 letter = input('Guess a new letter: ') # protects against guessing the same letter twice
         
         self.guessed_letters.append(letter) # once a proper guess is made, added to list of guessed letters
