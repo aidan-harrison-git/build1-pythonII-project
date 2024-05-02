@@ -67,7 +67,7 @@ class Game():
             print(f'{self.player_name}, you won the game! Thanks for playing!\n') # win message if string matches professor's name
         elif self.guesses_count == 12:
             print(f'{updated_str} is your updated string\n')
-            print(f'{self.player_name}, you failed to guess the name. Thanks for playing!\n') # loss message if user exhausts 12 guesses without matching string to name
+            print(f'{self.player_name}, you failed to guess {self.beg_ntg.upper()}. Thanks for playing!\n') # loss message if user exhausts 12 guesses without matching string to name
         else:
             print(f'\n{updated_str} is your updated string\n')
             print(f'You have guessed: \n{self.guessed_letters} \nYour guesses total {len(self.guessed_letters)} of 12') # message after each non-win/loss guess
