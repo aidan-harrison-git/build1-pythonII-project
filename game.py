@@ -24,7 +24,7 @@ class Game():
         while letter.lower() in self.guessed_letters:
                 letter = input('Guess a new letter: ') # protects against guessing the same letter twice
         
-        self.guessed_letters.append(letter) # once a proper guess is made, added to list of guessed letters
+        self.guessed_letters.append(letter.lower()) # once a proper guess is made, added to list of guessed letters
         if self.guesses_count == 0:
             self.guesses_count += 1 
 
