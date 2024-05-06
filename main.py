@@ -11,4 +11,10 @@ while play_again != 'no':
     get_name = input('\nDesignate a username: ') # creates username for purpose of addressing the user in messages 
     curr_round = round.Round(get_name) # instantiates a round which in turn instantiates objects of player, names, and game
     curr_round.game.cycle()  # runs the game file's cycle function which loops until 12 guesses are exhausted or win condition is met
-    play_again = input('Would you like to play again? yes/no: ').lower()
+    
+    while True:
+        play_again = input('Would you like to play again? yes/no: ').lower()
+        if play_again in ['yes', 'no']:
+            break
+        else:
+            print('Bad input! Must enter "yes" or "no"')
